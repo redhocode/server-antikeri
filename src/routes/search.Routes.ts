@@ -1,5 +1,5 @@
-import { Request, Response, Router } from "express";
-import searchUsers from "../controller/search.Controller";
+import { Request, Response, Router } from 'express';
+import searchUsers from '../controller/search.Controller';
 
 const router = Router();
 
@@ -50,8 +50,7 @@ const router = Router();
  *                   type: string
  */
 
-
-router.get("/", async (req: Request, res: Response): Promise<void> => {
+router.get('/', async (req: Request, res: Response): Promise<void> => {
   await searchUsers(req, res);
 });
 

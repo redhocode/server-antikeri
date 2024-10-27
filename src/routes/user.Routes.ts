@@ -1,5 +1,5 @@
-import { Router, Request, Response } from "express";
-import * as userController from "../controller/user.Controller";
+import { Router } from 'express';
+import * as userController from '../controller/user.Controller';
 
 const router = Router();
 
@@ -16,7 +16,7 @@ const router = Router();
  *           application/json:
  *             schema:
  *               type: array
- *          
+ *
  */
 
 /**
@@ -49,7 +49,7 @@ const router = Router();
  *         description: User not found
  */
 
-router.get("/", userController.getUsers);
-router.get("/:id", userController.getUserById);
+router.get('/', userController.getUsers);
+router.get('/:id', userController.getUserById);
 
 export default router;

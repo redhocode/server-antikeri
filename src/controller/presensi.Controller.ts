@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from "express";
-import * as presensiService from "../services/presensi.Service";
-import logger from "../utils/logger";
+import { Request, Response } from 'express';
+import * as presensiService from '../services/presensi.Service';
+import logger from '../utils/logger';
 
 /**
  * Handles HTTP POST requests to /api/presensi.
@@ -15,7 +15,7 @@ const postPresensi = async (
   const { userId, checktime, sensorId, sn } = req.body;
 
   if (!userId || !checktime) {
-    return res.status(400).json({ error: "userId and checktime are required" });
+    return res.status(400).json({ error: 'userId and checktime are required' });
   }
 
   try {
@@ -23,18 +23,18 @@ const postPresensi = async (
       userId,
       checktime,
       sensorId,
-      sn
+      sn,
     );
-    logger.info("Check-in/out data inserted successfully", { affectedRows });
+    logger.info('Check-in/out data inserted successfully', { affectedRows });
     return res.status(201).json({
-      message: "Check-in/out data inserted successfully",
+      message: 'Check-in/out data inserted successfully',
       affectedRows,
     });
   } catch (error) {
-    logger.error("Failed to insert check-in/out data", { error });
+    logger.error('Failed to insert check-in/out data', { error });
     return res
       .status(500)
-      .json({ error: "Failed to insert check-in/out data" });
+      .json({ error: 'Failed to insert check-in/out data' });
   }
 };
 
@@ -50,4 +50,4 @@ interface PresensiRequest extends Request {
   };
 }
 
-export default postPresensi
+export default postPresensi;

@@ -1,5 +1,5 @@
-import { Router, Request, Response } from "express";
-import postPresensi from "../controller/presensi.Controller"; // Ensure the import path is correct
+import { Router, Request, Response } from 'express';
+import postPresensi from '../controller/presensi.Controller'; // Ensure the import path is correct
 
 const router = Router();
 
@@ -9,7 +9,6 @@ const router = Router();
  * @param {Response} res - The response object.
  * @returns {Promise<Response>} - The response object.
  */
-
 
 /**
  * @swagger
@@ -34,7 +33,7 @@ const router = Router();
  *                 type: string
  *     responses:
  *       200:
- *         description: Presensi data posted successfully 
+ *         description: Presensi data posted successfully
  *         content:
  *           application/json:
  *             schema:
@@ -45,7 +44,7 @@ const router = Router();
  *                 affectedRows:
  *                   type: number
  */
-router.post("/", async (req: Request, res: Response): Promise<void> => {
+router.post('/', async (req: Request, res: Response): Promise<void> => {
   await postPresensi(req, res);
 });
 export default router;
