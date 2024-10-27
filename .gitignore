@@ -1,0 +1,6 @@
+/dist
+/log
+/node_modules
+/coverage
+.env.development
+.env.production
